@@ -89,11 +89,12 @@ main, main div.col, main div.row, label {
     display:flex;
 }
 main div.row {
+    flex-flow: row wrap;
+    max-width: 100%;
     justify-content: space-between;
-    align-items: flex-start;
 }
 main, main div.col {
-    flex-direction: column;
+    flex-flow: column nowrap;
 }
 main .border {
     border: 0.0625rem solid black;
@@ -168,7 +169,12 @@ div.templateDesc {
 
 /* Mobile */
 @media screen and (max-width: 600px) {
-    
+    input {
+        max-width: 100px;
+    }
+    input[type=number] {
+        max-width: 30px;
+    }
 }
 
 /* Scrollbars */
