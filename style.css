@@ -138,6 +138,7 @@ main button#exportCharacter, main button#deleteCharacter {
     align-self: flex-end;
     font-weight: bold;
     padding: 0.125rem;
+    margin: 0.125rem;
     border-radius: 0.25rem;
 }
 main button#deleteCharacter {
@@ -160,6 +161,7 @@ div.templateBox, div.templateDesc > * {
 div.templateDesc {
     display: flex;
     flex-flow: column nowrap;
+    max-width: 160px;
 }
 
 /* Desktop */

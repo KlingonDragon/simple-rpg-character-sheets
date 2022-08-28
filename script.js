@@ -26,7 +26,7 @@ const DOMContentLoaded = new Promise((resolve, reject) => {
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register('./worker.js')
 }
-const localCharacterList = JSON.parse(localStorage.getItem('characterList')) ?? [];
+const localCharacterList = (JSON.parse(localStorage.getItem('characterList')) ?? []).filter((item, index, arr) => arr.indexOf(item) === index);
 const saveLocalCharacterList = () => localStorage.setItem('characterList', JSON.stringify(localCharacterList));
 DOMContentLoaded.then(() => {
     console.log(localCharacterList);
@@ -41,6 +41,29 @@ DOMContentLoaded.then(() => {
         selectedTab(butNewCharacter);
         const main = $('main');
         main.innerHTML = '';
+        delete main.dataset.templatePath;
+        let container = _('div'), innerContainer = _('div'), button = _('button'), fileInput = _('input');
+        container.classList.add('templateBox')
+        innerContainer.classList.add('templateDesc')
+        fileInput.id = 'importFile';
+        fileInput.name = 'importFile';
+        fileInput.type = 'file';
+        fileInput.accept = '.json';
+        button.textContent = 'Import from File';
+        button.onclick = () => {
+            console.log(fileInput.files[0]);
+            new Response(fileInput.files[0]).json().then(json => {
+                localStorage.setItem(json.name, JSON.stringify(json));
+                let butCharacter = _('button');
+                butCharacter.textContent = json.name;
+                localCharacterList.push(json.name)
+                saveLocalCharacterList();
+                $('nav')._(butCharacter);
+                butCharacter.onclick = () => { loadCharacter(butCharacter) };
+                loadCharacter(butCharacter);
+            })
+        };
+        main._(container._(innerContainer._(fileInput) ,button));
         fetch('./templates.json').then(response => response.json()).then(templates => {
             templates.forEach(template => {
                 let container = _('div'), innerContainer = _('div'), button = _('button');
@@ -50,13 +73,13 @@ DOMContentLoaded.then(() => {
                 button.onclick = () => {
                     let butCharacter = _('button');
                     butCharacter.textContent = 'New Character';
-                    localCharacterList.push('New Character')
+                    localCharacterList.push('New Character');
+                    saveLocalCharacterList();
                     $('nav')._(butCharacter);
                     butCharacter.onclick = () => { loadCharacter(butCharacter) };
-                    fetch(template.path).then(response => response.json()).then(renderTemplate).then(()=>selectedTab(butCharacter)).then(saveLocalCharacterList);
-                }
-                container._(innerContainer._(`<strong>${template.name}<strong>`,`by ${template.author}`), button);
-                main._(container);
+                    fetch(template.path).then(response => response.json()).then(renderTemplate).then(() => selectedTab(butCharacter)).then(saveSheet);
+                };
+                main._(container._(innerContainer._(`<strong>${template.name}<strong>`,`by ${template.author}`), button));
             });
         })
     }
@@ -98,7 +121,7 @@ function renderTemplate(template, name = 'New Character') {
     $('title').innerHTML = `RPG Sheets | ${template.name} by ${template.author}`;
     const main = $('main');
     main.innerHTML = '';
-    main.dataset.templatePath= template.path;
+    main.dataset.templatePath = template.path;
     let h2 = _('h2');
     h2.id = 'character_name';
     h2.textContent = name;
@@ -149,7 +172,7 @@ function renderTemplate(template, name = 'New Character') {
             location.reload();
         }
     }
-    main._(_('br'),_('span')._(butExport,butDelete));
+    main._(_('br'),butExport,butDelete);
 }
 const textNodeList = ["h3", "h4", "h5", "h6", "strong", "p", "span", "div"];
 HTMLElement.prototype.__ = function (items) {
