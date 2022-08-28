@@ -125,6 +125,16 @@ function renderTemplate(template, name = 'New Character') {
     main._(_('h3')._('Notes:'), notes);
     main._(`Template: ${template.name} by ${template.author}`)
     $$('main input, main textarea#notes').forEach(input => input.oninput = saveSheet);
+    let butExport = _('button');
+    butExport.id = 'exportCharacter';
+    butExport.textContent = 'Export This Character';
+    butExport.onclick = () => {
+        let download = _('a');
+        download.href = `data:text/json;charset=utf-8,${encodeURIComponent(localStorage.getItem(h2.textContent))}`;
+        download.download = `${h2.textContent}.json`;
+        download.click();
+        download.remove();
+    }
     let butDelete = _('button');
     butDelete.id = 'deleteCharacter';
     butDelete.textContent = 'Delete This Character';
@@ -139,7 +149,7 @@ function renderTemplate(template, name = 'New Character') {
             location.reload();
         }
     }
-    main._(_('br'),butDelete);
+    main._(_('br'),_('span')._(butExport,butDelete));
 }
 const textNodeList = ["h3", "h4", "h5", "h6", "strong", "p", "span", "div"];
 HTMLElement.prototype.__ = function (items) {

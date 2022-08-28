@@ -133,13 +133,15 @@ main textarea#notes {
     text-align: start;
     padding: 0.125rem;
 }
-main button#deleteCharacter {
+main button#exportCharacter, main button#deleteCharacter {
     align-self: flex-end;
-    border-color: red;
-    border-radius: 0.25rem;
-    color: red;
     font-weight: bold;
     padding: 0.125rem;
+    border-radius: 0.25rem;
+}
+main button#deleteCharacter {
+    border-color: red;
+    color: red;
 }
 
 /* New Character */
