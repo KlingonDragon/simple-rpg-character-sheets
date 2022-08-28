@@ -1,6 +1,6 @@
 [
     {
-        "path": "/templates/default.json",
+        "path": "./templates/default.json",
         "name": "Simple RPG Character Sheet",
         "author": "KlingonDragon"
     }

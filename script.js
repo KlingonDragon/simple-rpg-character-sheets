@@ -24,7 +24,7 @@ const DOMContentLoaded = new Promise((resolve, reject) => {
     window.addEventListener('DOMContentLoaded', resolve);
 });
 if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register('/worker.js')
+    navigator.serviceWorker.register('./worker.js')
 }
 const localCharacterList = JSON.parse(localStorage.getItem('characterList')) ?? [];
 const saveLocalCharacterList = () => localStorage.setItem('characterList', JSON.stringify(localCharacterList));
@@ -41,7 +41,7 @@ DOMContentLoaded.then(() => {
         selectedTab(butNewCharacter);
         const main = $('main');
         main.innerHTML = '';
-        fetch('/templates.json').then(response => response.json()).then(templates => {
+        fetch('./templates.json').then(response => response.json()).then(templates => {
             templates.forEach(template => {
                 let container = _('div'), innerContainer = _('div'), button = _('button');
                 container.classList.add('templateBox')
