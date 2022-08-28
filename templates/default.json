@@ -1,0 +1,356 @@
+{
+    "path": "/templates/default.json",
+    "name": "Simple RPG Character Sheet",
+    "author": "KlingonDragon",
+    "items": [
+        {
+            "type": "row",
+            "items": [
+                {
+                    "type": "column",
+                    "grow": true,
+                    "items": [
+                        {
+                            "type": "row",
+                            "border": true,
+                            "items": [
+                                {
+                                    "type": "column",
+                                    "items": [
+                                        {
+                                            "type": "input",
+                                            "input_type": "text",
+                                            "name": "race",
+                                            "label": "Species",
+                                            "options": [
+                                                "Human",
+                                                "Elf",
+                                                "Dwarf"
+                                            ]
+                                        },
+                                        {
+                                            "type": "input",
+                                            "input_type": "text",
+                                            "name": "class",
+                                            "label": "Class",
+                                            "options": [
+                                                "Fighter",
+                                                "Ranger",
+                                                "Wizard"
+                                            ]
+                                        },
+                                        {
+                                            "type": "input",
+                                            "input_type": "text",
+                                            "name": "class_2",
+                                            "label": "Advanced/2nd Class",
+                                            "options": [
+                                                "Fighter",
+                                                "Ranger",
+                                                "Wizard"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "column",
+                                    "items": [
+                                        {
+                                            "type": "input",
+                                            "input_type": "text",
+                                            "name": "allegiance",
+                                            "label": "Allegiance"
+                                        },
+                                        {
+                                            "type": "input",
+                                            "input_type": "text",
+                                            "name": "lawfulness",
+                                            "label": "Lawfulness",
+                                            "options": [
+                                                "Lawful",
+                                                "Neutral",
+                                                "Chaotic"
+                                            ]
+                                        },
+                                        {
+                                            "type": "input",
+                                            "input_type": "text",
+                                            "name": "morality",
+                                            "label": "Morality",
+                                            "options": [
+                                                "Good",
+                                                "Neutral",
+                                                "Evil"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "column",
+                                    "items": [
+                                        {
+                                            "type": "input",
+                                            "input_type": "number",
+                                            "name": "age",
+                                            "label": "Age"
+                                        },
+                                        {
+                                            "type": "input",
+                                            "input_type": "number",
+                                            "name": "height",
+                                            "label": "Height",
+                                            "suffix": "cm"
+                                        },
+                                        {
+                                            "type": "input",
+                                            "input_type": "number",
+                                            "name": "mass",
+                                            "label": "Mass",
+                                            "suffix": "kg"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "column",
+                                    "items": [
+                                        {
+                                            "type": "input",
+                                            "input_type": "text",
+                                            "name": "sex",
+                                            "label": "Sex"
+                                        },
+                                        {
+                                            "type": "input",
+                                            "input_type": "text",
+                                            "name": "gender",
+                                            "label": "Gender"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "column",
+                                    "items": [
+                                        {
+                                            "type": "input",
+                                            "input_type": "number",
+                                            "name": "level",
+                                            "label": "Level"
+                                        },
+                                        {
+                                            "type": "input",
+                                            "input_type": "number",
+                                            "name": "exp",
+                                            "label": "Exp"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "row",
+                            "items": [
+                                {
+                                    "type": "column",
+                                    "border": true,
+                                    "items": [
+                                        {
+                                            "type": "column",
+                                            "border": true,
+                                            "items": [
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "health",
+                                                    "label": "Health"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "recovery",
+                                                    "label": "Recovery"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "armour",
+                                                    "label": "Armour"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "column",
+                                            "border": true,
+                                            "items": [
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "str",
+                                                    "label": "STR"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "dex",
+                                                    "label": "DEX"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "con",
+                                                    "label": "CON"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "int",
+                                                    "label": "INT"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "wis",
+                                                    "label": "WIS"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "cha",
+                                                    "label": "CHA"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "column",
+                                    "grow": true,
+                                    "items": [
+                                        {
+                                            "type": "column",
+                                            "grow": true,
+                                            "items": [
+                                                {
+                                                    "type": "h3",
+                                                    "text": "Traits"
+                                                },
+                                                {
+                                                    "type": "input_table",
+                                                    "name": "traits",
+                                                    "cols": [
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "text",
+                                                            "name":"trait",
+                                                            "label": "Trait"
+                                                        },
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "text",
+                                                            "name":"effect",
+                                                            "label": "Effect"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "column",
+                                            "grow": true,
+                                            "items": [
+                                                {
+                                                    "type": "h3",
+                                                    "text": "Skills/Abilities"
+                                                },
+                                                {
+                                                    "type": "input_table",
+                                                    "name": "skills",
+                                                    "cols": [
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "text",
+                                                            "name":"skill",
+                                                            "label": "Skill/Ability"
+                                                        },
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "number",
+                                                            "name":"level",
+                                                            "label": "Level"
+                                                        },
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "text",
+                                                            "name":"effect",
+                                                            "label": "Effect"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "column",
+                                            "grow": true,
+                                            "items": [
+                                                {
+                                                    "type": "h3",
+                                                    "text": "Inventory"
+                                                },
+                                                {
+                                                    "type": "input_table",
+                                                    "name": "inventory",
+                                                    "cols": [
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "text",
+                                                            "name":"item",
+                                                            "label": "Item"
+                                                        },
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "number",
+                                                            "name":"mass",
+                                                            "label": "Mass",
+                                                            "suffix": "kg"
+                                                        },
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "text",
+                                                            "name":"desc",
+                                                            "label": "Description"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "input_table",
+                    "name": "languages",
+                    "cols": [
+                        {
+                            "type": "input",
+                            "input_type": "text",
+                            "name":"language",
+                            "label": "Languages",
+                            "options": [
+                                "Common",
+                                "Dwarvish",
+                                "Elvish",
+                                "Giant",
+                                "Gnomish",
+                                "Goblin",
+                                "Halfling",
+                                "Orc"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

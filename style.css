@@ -1,0 +1,193 @@
+/* Default Element Styling */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: sans-serif;
+    border-collapse: collapse;
+}
+a {
+    color: inherit;
+}
+img {
+    object-fit: contain;
+}
+button {
+    cursor: pointer;
+}
+
+/* Page Layout */
+html, header, footer, main th {
+    background: black;
+    color: white;
+}
+@media (prefers-color-scheme: light) {
+    html, header, footer, main th {
+        background: silver;
+        color: black;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    html, header, footer, main th {
+        background: black;
+        color: white;
+    }
+}
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+}
+header, footer {
+    padding: 0.25rem;
+}
+nav, main {
+    align-self: stretch;
+    background: white;
+    color: black;
+    border-radius: 1rem;
+    margin: 0.5rem;
+}
+nav {
+    flex: 0 0 auto;
+    overflow-x: auto;
+    padding: 0.25rem 0.875rem 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+nav > button {
+    background: silver;
+    border: none;
+    border-radius: 1rem 1rem 0 0;
+    margin: 0.25rem 0.125rem 0;
+    padding: 0.25rem 0.5rem;
+    min-width: 5rem;
+    font-weight: bold;
+}
+nav > button.selected {
+    background: black;
+    color: white
+}
+button#newCharacter {
+    margin-inline-start: auto;
+    order: 9999;
+}
+main {
+    flex: 1 1 auto;
+    overflow: auto;
+    padding: 0.5rem;
+}
+
+/* Render Template */
+main, main div.col, main div.row, label {
+    display:flex;
+}
+main div.row {
+    justify-content: space-between;
+    align-items: flex-start;
+}
+main, main div.col {
+    flex-direction: column;
+}
+main .border {
+    border: 0.0625rem solid black;
+}
+main .border, main label, main table {
+    margin: 0.125rem;
+    padding: 0.125rem;
+}
+main .grow {
+    flex-grow: 1;
+}
+main label {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+main label > input {
+    margin-inline-start: 1rem;
+}
+input[type=number] {
+    max-width: 60px;
+}
+main table, main tr, main th, main td {
+    border: 1px solid black;
+}
+main th, main td {
+    padding: 0.125rem;
+}
+main table label {
+    justify-content: center;
+}
+main table label > input {
+    margin-inline: 0.125rem;
+}
+main textarea#notes {
+    flex: 1 0 200px;
+    text-align: start;
+    padding: 0.125rem;
+}
+main button#deleteCharacter {
+    align-self: flex-end;
+    border-color: red;
+    border-radius: 0.25rem;
+    color: red;
+    font-weight: bold;
+    padding: 0.125rem;
+}
+
+/* New Character */
+div.templateBox {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 240px;
+    border: 0.0625rem solid black;
+    border-radius: 0.25rem;
+}
+div.templateBox, div.templateDesc > * {
+    margin: 0.125rem;
+    padding: 0.125rem;
+}
+div.templateDesc {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+/* Desktop */
+@media screen and (min-width: 600px) {
+
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+    
+}
+
+/* Scrollbars */
+::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-corner, ::-webkit-scrollbar-thumb {
+    width: 1rem;
+    height: 1rem;
+    border: 0.25rem solid transparent;
+}
+::-webkit-scrollbar {
+    background: inherit;
+    border-radius: 0.375rem;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0 0.0625rem currentColor;
+    border-radius: 1rem;
+}
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 0 1rem currentColor;
+    border-radius: 1rem;
+}
+/* Scrollbars (for non blink/webkit browsers (firefox)) */
+* {
+    scrollbar-color: white black;
+}

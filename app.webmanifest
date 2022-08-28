@@ -1,0 +1,16 @@
+{
+    "name": "Simple RPG Character Sheets",
+    "short_name": "RPG Sheets",
+    "start_url": "/",
+    "description": "Webapp for creating and saving character sheets to your device",
+    "categories": ["games"],
+    "theme_color": "#000000",
+    "background_color": "#000000",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "favicon.svg",
+            "sizes": "any"
+        }
+    ]
+}
