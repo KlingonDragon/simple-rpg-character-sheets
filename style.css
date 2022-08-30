@@ -85,6 +85,13 @@ main {
 }
 
 /* Render Template */
+h2#character_name {
+    padding: 0 1em;
+    background: transparent url("./pencil.svg") right center/1em 1em no-repeat;
+}
+#character_name:focus {
+    background: transparent;
+}
 main, main div.col, main div.row, label {
     display:flex;
 }
@@ -111,8 +118,14 @@ main label {
     justify-content: space-between;
     align-items: flex-start;
 }
+main label > span:first-child {
+    margin-inline-end: 1rem;
+}
 main label > input {
-    margin-inline-start: 1rem;
+    margin-inline-start: auto;
+}
+main label > small:last-child {
+    margin-inline-start: 0.5rem;
 }
 input[type=number] {
     max-width: 60px;

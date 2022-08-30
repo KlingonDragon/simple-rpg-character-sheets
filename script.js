@@ -197,7 +197,9 @@ function createNode(template) {
     }
     if (template.type == "input") {
         node = _('label');
-        node._(template.label);
+        if (template.label) {
+            node._(_('span')._(template.label));
+        }
         let input = _('input');
         input.name = template.name;
         input.type = template.input_type;
@@ -213,12 +215,11 @@ function createNode(template) {
             input.setAttribute('list', `datalist_${input.name}`);
         }
         if (template.suffix) {
-            node._(`<small>${template.suffix}</small>`);
+            node._(_('small')._(template.suffix));
         }
     }
     if (template.type == "input_table") {
-        node = _('table')
-        node._(
+        node = _('table')._(
             _('thead')._(...template.cols.map(col => _('th')._(col.label, col.options ? ((options) => {
                 let list = _('datalist');
                 list.id = `table_datalist_${col.name}`;

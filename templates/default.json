@@ -151,7 +151,33 @@
                             "items": [
                                 {
                                     "type": "column",
-                                    "border": true,
+                                    "items": [
+                                        {
+                                            "type": "input_table",
+                                            "name": "languages",
+                                            "cols": [
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "text",
+                                                    "name":"language",
+                                                    "label": "Languages",
+                                                    "options": [
+                                                        "Common",
+                                                        "Dwarvish",
+                                                        "Elvish",
+                                                        "Giant",
+                                                        "Gnomish",
+                                                        "Goblin",
+                                                        "Halfling",
+                                                        "Orc"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "column",
                                     "items": [
                                         {
                                             "type": "column",
@@ -324,28 +350,6 @@
                                         }
                                     ]
                                 }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "input_table",
-                    "name": "languages",
-                    "cols": [
-                        {
-                            "type": "input",
-                            "input_type": "text",
-                            "name":"language",
-                            "label": "Languages",
-                            "options": [
-                                "Common",
-                                "Dwarvish",
-                                "Elvish",
-                                "Giant",
-                                "Gnomish",
-                                "Goblin",
-                                "Halfling",
-                                "Orc"
                             ]
                         }
                     ]
