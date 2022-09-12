@@ -1,0 +1,921 @@
+{
+    "path": "./templates/D&D.json",
+    "name": "D&D Character Sheet",
+    "author": "Wizards of the Coast (Adapted by KlingonDragon)",
+    "items": [
+        {
+            "type": "row",
+            "border": true,
+            "items": [
+                {
+                    "type": "column",
+                    "items": [
+                        {
+                            "type":"row",
+                            "items": [
+                                {
+                                    "type": "input",
+                                    "input_type": "text",
+                                    "name": "class",
+                                    "label": "Class",
+                                    "options": [
+                                        "Barbarian",
+                                        "Bard",
+                                        "Cleric",
+                                        "Druid",
+                                        "Fighter",
+                                        "Monk",
+                                        "Paladin",
+                                        "Ranger",
+                                        "Rogue",
+                                        "Sorcerer",
+                                        "Warlock",
+                                        "Wizard",
+                                        "Artificer",
+                                        "Blood Hunter"
+                                    ]
+                                },
+                                {
+                                    "type": "input",
+                                    "input_type": "number",
+                                    "name": "class_level",
+                                    "placeholder": "level"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "input",
+                            "input_type": "text",
+                            "name": "race",
+                            "label": "Race",
+                            "options": [
+                                "Dragonborn",
+                                "Dwarf",
+                                "Elf",
+                                "Gnome",
+                                "Half-Elf",
+                                "Halfling",
+                                "Half-Orc",
+                                "Human",
+                                "Tiefling"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "column",
+                    "items": [
+                        {
+                            "type": "input",
+                            "input_type": "text",
+                            "name": "background",
+                            "label": "Background",
+                            "options": [
+                                "Acolyte",
+                                "Criminal / Spy",
+                                "Folk Hero",
+                                "Noble",
+                                "Sage",
+                                "Soldier"
+                            ]
+                        },
+                        {
+                            "type": "row",
+                            "items": [
+                                {
+                                    "type": "span",
+                                    "text": "Alignment"
+                                },
+                                {
+                                    "type": "select",
+                                    "name": "lawfulness",
+                                    "options": [
+                                        "Lawful",
+                                        "Neutral",
+                                        "Chaotic"
+                                    ]
+                                },
+                                {
+                                    "type": "select",
+                                    "name": "morality",
+                                    "options": [
+                                        "Good",
+                                        "Neutral",
+                                        "Evil"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "column",
+                    "items": [
+                        {
+                            "type": "input",
+                            "input_type": "text",
+                            "name": "player",
+                            "label": "Player Name"
+                        },
+                        {
+                            "type": "input",
+                            "input_type": "number",
+                            "name": "exp",
+                            "label": "Experience Points"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "row",
+            "wrap": false,
+            "items": [
+                {
+                    "type": "column",
+                    "wrap": false,
+                    "items": [
+                        {
+                            "type": "row",
+                            "items": [
+                                {
+                                    "type": "column",
+                                    "bg": true,
+                                    "corners": false,
+                                    "items": [
+                                        {
+                                            "type": "column",
+                                            "border": true,
+                                            "items": [
+                                                {
+                                                    "type": "strong",
+                                                    "text": "Strength"
+                                                },
+                                                {
+                                                    "big": true,
+                                                    "centre": true,
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "str+"
+                                                },
+                                                {
+                                                    "centre": true,
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "str"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "column",
+                                            "border": true,
+                                            "items": [
+                                                {
+                                                    "type": "strong",
+                                                    "text": "Dexterity"
+                                                },
+                                                {
+                                                    "big": true,
+                                                    "centre": true,
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "dex+"
+                                                },
+                                                {
+                                                    "centre": true,
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "dex"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "column",
+                                            "border": true,
+                                            "items": [
+                                                {
+                                                    "type": "strong",
+                                                    "text": "Constitution"
+                                                },
+                                                {
+                                                    "big": true,
+                                                    "centre": true,
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "con+"
+                                                },
+                                                {
+                                                    "centre": true,
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "con"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "column",
+                                            "border": true,
+                                            "items": [
+                                                {
+                                                    "type": "strong",
+                                                    "text": "Inteligence"
+                                                },
+                                                {
+                                                    "big": true,
+                                                    "centre": true,
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "int+"
+                                                },
+                                                {
+                                                    "centre": true,
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "int"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "column",
+                                            "border": true,
+                                            "items": [
+                                                {
+                                                    "type": "strong",
+                                                    "text": "Wisdom"
+                                                },
+                                                {
+                                                    "big": true,
+                                                    "centre": true,
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "wis+"
+                                                },
+                                                {
+                                                    "centre": true,
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "wis"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "column",
+                                            "border": true,
+                                            "items": [
+                                                {
+                                                    "type": "strong",
+                                                    "text": "Charisma"
+                                                },
+                                                {
+                                                    "big": true,
+                                                    "centre": true,
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "cha+"
+                                                },
+                                                {
+                                                    "centre": true,
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "cha"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "column",
+                                    "grow": true,
+                                    "items": [
+                                        {
+                                            "border": true,
+                                            "type": "input",
+                                            "input_type": "checkbox",
+                                            "name": "inspiration",
+                                            "label": "Inspiration"
+                                        },
+                                        {
+                                            "border": true,
+                                            "type": "input",
+                                            "input_type": "plus_minus",
+                                            "name": "proficiency_bonus",
+                                            "label": "Proficiency Bonus"
+                                        },
+                                        {
+                                            "type": "column",
+                                            "border": true,
+                                            "items": [
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "str_save",
+                                                    "label": "Strength"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "dex_save",
+                                                    "label": "Dexterity"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "con_save",
+                                                    "label": "Constitution"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "int_save",
+                                                    "label": "Intelligence"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "wis_save",
+                                                    "label": "Wisdom"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "cha_save",
+                                                    "label": "Charisma"
+                                                },
+                                                {
+                                                    "type": "strong",
+                                                    "text": "Saving Throws"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "column",
+                                            "border": true,
+                                            "items": [
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "acrobatics",
+                                                    "label": "Acrobatics (Dex)"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "animal_handling",
+                                                    "label": "Animal Handling (Wis)"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "arcana",
+                                                    "label": "Arcana (Int)"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "athletics",
+                                                    "label": "Athletics (Str)"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "deception",
+                                                    "label": "Deception (Cha)"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "history",
+                                                    "label": "History (Int)"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "insight",
+                                                    "label": "Insight (Wis)"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "intimidation",
+                                                    "label": "Intimidation (Cha)"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "investigation",
+                                                    "label": "Investigation (Int)"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "medicine",
+                                                    "label": "Medicine (Wis)"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "nature",
+                                                    "label": "Nature (Int)"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "perception",
+                                                    "label": "Perception (Wis)"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "performance",
+                                                    "label": "Performance (Cha)"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "persuasion",
+                                                    "label": "Persuasion (Cha)"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "religion",
+                                                    "label": "Religion (Int)"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "slight_of_hand",
+                                                    "label": "Slight of Hand (Dex)"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "stealth",
+                                                    "label": "Stealth (Dex)"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "plus_minus",
+                                                    "name": "survival",
+                                                    "label": "Survival (Wis)"
+                                                },
+                                                {
+                                                    "type": "strong",
+                                                    "text": "Skills"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "border": true,
+                            "type": "input",
+                            "input_type": "number",
+                            "name": "passive_perception",
+                            "label": "Passive Wisdom (Perception)"
+                        },
+                        {
+                            "type": "column",
+                            "border": true,
+                            "items": [
+                                {
+                                    "type": "input_table",
+                                    "name": "proficiencies",
+                                    "cols": [
+                                        {
+                                            "type": "input",
+                                            "input_type": "text",
+                                            "name":"proficiency",
+                                            "label": "Proficiencies"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "input_table",
+                                    "name": "languages",
+                                    "cols": [
+                                        {
+                                            "type": "input",
+                                            "input_type": "text",
+                                            "name":"language",
+                                            "label": "Languages",
+                                            "options": [
+                                                "Common",
+                                                "Dwarvish",
+                                                "Elvish",
+                                                "Giant",
+                                                "Gnomish",
+                                                "Goblin",
+                                                "Halfling",
+                                                "Orc"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "column",
+                    "grow": true,
+                    "items": [
+                        {
+                            "type": "column",
+                            "bg": true,
+                            "corners": false,
+                            "items": [
+                                {
+                                    "type": "row",
+                                    "items": [
+                                        {
+                                            "type": "row",
+                                            "grow": true,
+                                            "centre": true,
+                                            "items": [
+                                                {
+                                                    "type": "column",
+                                                    "centre": true,
+                                                    "border": true,
+                                                    "items": [
+                                                        {
+                                                            "big": true,
+                                                            "type": "input",
+                                                            "input_type": "number",
+                                                            "name": "armour"
+                                                        },
+                                                        {
+                                                            "type": "strong",
+                                                            "text": "Armour Class"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "column",
+                                                    "border": true,
+                                                    "items": [
+                                                        {
+                                                            "big": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "initiative"
+                                                        },
+                                                        {
+                                                            "type": "strong",
+                                                            "text": "Initiative"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "column",
+                                                    "border": true,
+                                                    "items": [
+                                                        {
+                                                            "big": true,
+                                                            "type": "input",
+                                                            "input_type": "number",
+                                                            "name": "speed",
+                                                            "suffix": "feet"
+                                                        },
+                                                        {
+                                                            "type": "strong",
+                                                            "text": "Speed"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "column",
+                                            "border": true,
+                                            "items": [
+                                                {
+                                                    "short": true,
+                                                    "type": "input",
+                                                    "input_type": "text",
+                                                    "name": "total_hit_dice",
+                                                    "label": "Total"
+                                                },
+                                                {
+                                                    "big": 2,
+                                                    "centre": true,
+                                                    "short": true,
+                                                    "type": "input",
+                                                    "input_type": "text",
+                                                    "name": "hit_dice"
+                                                },
+                                                {
+                                                    "type": "strong",
+                                                    "text": "Hit Dice"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "row",
+                                    "items": [
+                                        {
+                                            "type": "column",
+                                            "grow": true,
+                                            "border": true,
+                                            "items": [
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "max_hp",
+                                                    "label": "Hit Point Maximum"
+                                                },
+                                                {
+                                                    "big": true,
+                                                    "centre": true,
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "current_hp"
+                                                },
+                                                {
+                                                    "type": "strong",
+                                                    "text": "Current Hit Points"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "column",
+                                            "border": true,
+                                            "items": [
+                                                {
+                                                    "big": true,
+                                                    "centre": true,
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "temp_hp"
+                                                },
+                                                {
+                                                    "type": "strong",
+                                                    "text": "Temporary Hit Points"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "column",
+                                            "border": true,
+                                            "items": [
+                                                {
+                                                    "type":"row",
+                                                    "items": [
+                                                        {
+                                                            "type":"span",
+                                                            "text": "Successes"
+                                                        },
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "death_save_suc_1"
+                                                        },
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "death_save_suc_2"
+                                                        },
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "death_save_suc_3"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type":"row",
+                                                    "items": [
+                                                        {
+                                                            "type":"span",
+                                                            "text": "Failures"
+                                                        },
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "death_save_fail_1"
+                                                        },
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "death_save_fail_2"
+                                                        },
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "death_save_fail_3"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "strong",
+                                                    "text": "Death Saves"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "column",
+                            "border": true,
+                            "items": [
+                                {
+                                    "type": "strong",
+                                    "text": "Attacks & Spellcasting"
+                                },
+                                {
+                                    "type": "input_table",
+                                    "name": "attacks",
+                                    "cols": [
+                                        {
+                                            "type": "input",
+                                            "input_type": "text",
+                                            "name":"name",
+                                            "label": "Name"
+                                        },
+                                        {
+                                            "type": "input",
+                                            "input_type": "plus_minus",
+                                            "name":"bonus",
+                                            "label": "ATK Bonus"
+                                        },
+                                        {
+                                            "type": "input",
+                                            "input_type": "text",
+                                            "name":"damage",
+                                            "label": "Damage/Type"
+                                        },
+                                        {
+                                            "type": "textarea",
+                                            "name":"notes",
+                                            "label": "Notes"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "column",
+                            "border": true,
+                            "items": [
+                                {
+                                    "type": "strong",
+                                    "text": "Equipment"
+                                },
+                                {
+                                    "type": "row",
+                                    "items": [
+                                        {
+                                            "type": "column",
+                                            "items": [
+                                                {
+                                                    "border": true,
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "cp",
+                                                    "label": "CP"
+                                                },
+                                                {
+                                                    "border": true,
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "sp",
+                                                    "label": "SP"
+                                                },
+                                                {
+                                                    "border": true,
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "ep",
+                                                    "label": "EP"
+                                                },
+                                                {
+                                                    "border": true,
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "gp",
+                                                    "label": "GP"
+                                                },
+                                                {
+                                                    "border": true,
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name": "pp",
+                                                    "label": "PP"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "grow": true,
+                                            "type": "input_table",
+                                            "name": "inventory",
+                                            "cols": [
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "text",
+                                                    "name":"item",
+                                                    "label": "Item"
+                                                },
+                                                {
+                                                    "type": "input",
+                                                    "input_type": "number",
+                                                    "name":"weight",
+                                                    "label": "weight",
+                                                    "suffix": "lbs"
+                                                },
+                                                {
+                                                    "type": "textarea",
+                                                    "name":"notes",
+                                                    "label": "Notes"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "column",
+                    "items": [
+                        {
+                            "type": "column",
+                            "bg": true,
+                            "corners": false,
+                            "items": [
+                                {
+                                    "type": "input_table",
+                                    "name": "personality_traits",
+                                    "cols": [
+                                        {
+                                            "type": "textarea",
+                                            "name":"personality_trait",
+                                            "label": "Personality Traits"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "input_table",
+                                    "name": "ideals",
+                                    "cols": [
+                                        {
+                                            "type": "textarea",
+                                            "name":"ideal",
+                                            "label": "Ideals"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "input_table",
+                                    "name": "bonds",
+                                    "cols": [
+                                        {
+                                            "type": "textarea",
+                                            "name":"bond",
+                                            "label": "Bonds"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "input_table",
+                                    "name": "flaws",
+                                    "cols": [
+                                        {
+                                            "type": "textarea",
+                                            "name":"flaws",
+                                            "label": "Flaws"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "input_table",
+                            "name": "traits",
+                            "cols": [
+                                {
+                                    "type": "input",
+                                    "input_type": "text",
+                                    "name":"trait",
+                                    "label": "Feature / Trait"
+                                },
+                                {
+                                    "type": "textarea",
+                                    "name":"notes",
+                                    "label": "Notes"
+                                }
+                            ]
+                        }
+                    ]
+                }
+
+            ]
+        }
+    ]
+}

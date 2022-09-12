@@ -29,7 +29,6 @@ if ("serviceWorker" in navigator) {
 const localCharacterList = (JSON.parse(localStorage.getItem('characterList')) ?? []).filter((item, index, arr) => arr.indexOf(item) === index);
 const saveLocalCharacterList = () => localStorage.setItem('characterList', JSON.stringify(localCharacterList));
 DOMContentLoaded.then(() => {
-    console.log(localCharacterList);
     localCharacterList.forEach(localCharacter => {
         let butCharacter = _('button');
         butCharacter.textContent = localCharacter;
@@ -51,7 +50,6 @@ DOMContentLoaded.then(() => {
         fileInput.accept = '.json';
         button.textContent = 'Import from File';
         button.onclick = () => {
-            console.log(fileInput.files[0]);
             new Response(fileInput.files[0]).json().then(json => {
                 localStorage.setItem(json.name, JSON.stringify(json));
                 let butCharacter = _('button');
@@ -94,7 +92,6 @@ const findInput = (name) => $(`main input[name="${name}"]`);
 function loadCharacter(button) {
     selectedTab(button);
     let savedCharacter = JSON.parse(localStorage.getItem(button.textContent));
-    console.log(savedCharacter);
     fetch(savedCharacter.template_path).then(response => response.json()).then(
         template => renderTemplate(template, savedCharacter.name)
     ).then(
@@ -112,7 +109,11 @@ function loadCharacter(button) {
             }
             let theInput
             if (theInput = findInput(input.key)) {
-                theInput.value = input.value;
+                if (theInput.type == 'checkbox') {
+                    theInput.checked = input.value;
+                } else {
+                    theInput.value = input.value;
+                }
             }
         })
     ).then(() => { if (savedCharacter.notes) { $('main textarea#notes').value = savedCharacter.notes; } });
@@ -147,7 +148,7 @@ function renderTemplate(template, name = 'New Character') {
     notes.name = 'notes';
     main._(_('h3')._('Notes:'), notes);
     main._(`Template: ${template.name} by ${template.author}`)
-    $$('main input, main textarea#notes').forEach(input => input.oninput = saveSheet);
+    $$('main input, main textarea, main select').forEach(input => input.addEventListener('input',saveSheet));
     let butExport = _('button');
     butExport.id = 'exportCharacter';
     butExport.textContent = 'Export This Character';
@@ -195,14 +196,24 @@ function createNode(template) {
         node = _(template.type);
         node.textContent = template.text;
     }
-    if (template.type == "input") {
+    if (template.type == "input" || template.type == "textarea") {
         node = _('label');
         if (template.label) {
             node._(_('span')._(template.label));
         }
-        let input = _('input');
+        let input = _(template.type);
         input.name = template.name;
-        input.type = template.input_type;
+        if (template.input_type == 'plus_minus') {
+            input.classList.add('plus_minus');
+            input.type = 'text';
+            input.inputmode = 'numeric';
+            input.pattern = '[\\+\\-]\\d+'
+        } else {
+            input.type = template.input_type;
+        }
+        if (template.placeholder) {
+            input.placeholder = template.placeholder;
+        }
         node._(input);
         if (template.options) {
             let list = _('datalist')._(...template.options.map(option => {
@@ -214,6 +225,23 @@ function createNode(template) {
             node._(list);
             input.setAttribute('list', `datalist_${input.name}`);
         }
+        if (template.suffix) {
+            node._(_('small')._(template.suffix));
+        }
+    }
+    if (template.type == "select") {
+        node = _('label');
+        if (template.label) {
+            node._(_('span')._(template.label));
+        }
+        let input = _('select');
+        input.name = template.name;
+        node._(input);
+        input._(_('option'), ...template.options.map(option => {
+            let optionNode = _('option')._(option);
+            optionNode.value = option;
+            return optionNode;
+        }));
         if (template.suffix) {
             node._(_('small')._(template.suffix));
         }
@@ -240,8 +268,27 @@ function createNode(template) {
         node.$('tfoot button').onclick = node.newRow;
         node.newRow();
     }
+    if (template.centre) { node.classList.add('centre'); }
     if (template.border) { node.classList.add('border'); }
+    if (template.corners === false) {node.classList.add('round_corners');}
     if (template.grow) { node.classList.add('grow'); }
+    if (template.wrap === false) {node.classList.add('no_wrap');}
+    if (template.bg) {
+        node.classList.add('bg');
+        if (CSS.supports('background-color', 'attr(data-bg-colour color)')) {
+            node.dataset.bgColour = template.bg === true ? 'grey':template.bg;
+        } else {
+            node.style = `--bg-colour: ${template.bg === true ? 'grey' : template.bg}`;
+        }
+    }
+    if (template.big) {
+        if (template.big === true) {
+            node.classList.add('big');
+        } else if (Number(template.big) === template.big) {
+            node.classList.add(`size_${template.big}`);
+        }
+    }
+    if (template.short) { node.classList.add('short'); }
     return node;
 }
 HTMLElement.prototype.___ = function (table) {
@@ -255,14 +302,24 @@ function createTableNode(template) {
         node = _(template.type);
         node.textContent = template.text;
     }
-    if (template.type == "input") {
+    if (template.type == "input" || template.type == "textarea") {
         node = _('label');
-        let input = _('input');
+        let input = _(template.type);
         input.name = `table_${this.name}_${template.name}_${this.input_rows}`;
-        input.type = template.input_type;
+        if (template.input_type == 'plus_minus') {
+            input.classList.add('plus_minus');
+            input.type = 'text';
+            input.inputmode = 'numeric';
+            input.pattern = '[\\+\\-]\\d+'
+        } else {
+            input.type = template.input_type;
+        }
         node._(input);
         if (template.options) {
             input.setAttribute('list', `table_datalist_${template.name}`);
+        }
+        if (template.placeholder) {
+            input.placeholder = template.placeholder;
         }
         if (template.suffix) {
             node._(`<small>${template.suffix}</small>`);
@@ -273,11 +330,10 @@ function createTableNode(template) {
 createTableNode
 function saveSheet() {
     const character_name = $('h2#character_name').textContent;
-    console.log(character_name);
     localStorage.setItem(character_name, JSON.stringify({
         name: character_name,
         template_path: $('main').dataset.templatePath,
-        inputs: $$('main input').map(input => (input.value ? { key: input.name, value: input.value } : { key: '', value: '' })),
+        inputs: $$('main input').map(input => (input.type == 'checkbox' ? { key: input.name, value: input.checked } :(input.value ? { key: input.name, value: input.value } : { key: '', value: '' }))),
         notes: $('main textarea#notes').value
     }));
 }

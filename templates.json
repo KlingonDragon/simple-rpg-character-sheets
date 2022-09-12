@@ -3,5 +3,10 @@
         "path": "./templates/default.json",
         "name": "Simple RPG Character Sheet",
         "author": "KlingonDragon"
+    },
+    {
+        "path": "./templates/D&D.json",
+        "name": "D&D Character Sheet",
+        "author": "Wizards of the Coast (Adapted by KlingonDragon)"
     }
 ]
