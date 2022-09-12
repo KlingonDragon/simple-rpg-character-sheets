@@ -130,11 +130,9 @@
         },
         {
             "type": "row",
-            "wrap": false,
             "items": [
                 {
                     "type": "column",
-                    "wrap": false,
                     "items": [
                         {
                             "type": "row",
@@ -307,40 +305,106 @@
                                             "border": true,
                                             "items": [
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "str_save",
-                                                    "label": "Strength"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "str_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "str_save",
+                                                            "label": "Strength"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "dex_save",
-                                                    "label": "Dexterity"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "dex_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "dex_save",
+                                                            "label": "Dexterity"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "con_save",
-                                                    "label": "Constitution"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "con_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "con_save",
+                                                            "label": "Constitution"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "int_save",
-                                                    "label": "Intelligence"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "int_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "int_save",
+                                                            "label": "Intelligence"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "wis_save",
-                                                    "label": "Wisdom"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "wis_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "wis_save",
+                                                            "label": "Wisdom"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "cha_save",
-                                                    "label": "Charisma"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "cha_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "cha_save",
+                                                            "label": "Charisma"
+                                                        }
+                                                    ]
                                                 },
                                                 {
                                                     "type": "strong",
@@ -353,112 +417,310 @@
                                             "border": true,
                                             "items": [
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "acrobatics",
-                                                    "label": "Acrobatics (Dex)"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "acrobatics_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "acrobatics",
+                                                            "label": "Acrobatics (Dex)"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "animal_handling",
-                                                    "label": "Animal Handling (Wis)"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "animal_handling_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "animal_handling",
+                                                            "label": "Animal Handling (Wis)"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "arcana",
-                                                    "label": "Arcana (Int)"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "arcana_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "arcana",
+                                                            "label": "Arcana (Int)"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "athletics",
-                                                    "label": "Athletics (Str)"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "athletics_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "athletics",
+                                                            "label": "Athletics (Str)"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "deception",
-                                                    "label": "Deception (Cha)"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "deception_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "deception",
+                                                            "label": "Deception (Cha)"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "history",
-                                                    "label": "History (Int)"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "history_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "history",
+                                                            "label": "History (Int)"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "insight",
-                                                    "label": "Insight (Wis)"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "insight_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "insight",
+                                                            "label": "Insight (Wis)"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "intimidation",
-                                                    "label": "Intimidation (Cha)"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "intimidation_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "intimidation",
+                                                            "label": "Intimidation (Cha)"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "investigation",
-                                                    "label": "Investigation (Int)"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "investigation_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "investigation",
+                                                            "label": "Investigation (Int)"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "medicine",
-                                                    "label": "Medicine (Wis)"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "medicine_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "medicine",
+                                                            "label": "Medicine (Wis)"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "nature",
-                                                    "label": "Nature (Int)"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "nature_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "nature",
+                                                            "label": "Nature (Int)"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "perception",
-                                                    "label": "Perception (Wis)"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "perception_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "perception",
+                                                            "label": "Perception (Wis)"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "performance",
-                                                    "label": "Performance (Cha)"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "performance_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "performance",
+                                                            "label": "Performance (Cha)"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "persuasion",
-                                                    "label": "Persuasion (Cha)"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "persuasion_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "persuasion",
+                                                            "label": "Persuasion (Cha)"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "religion",
-                                                    "label": "Religion (Int)"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "religion_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "religion",
+                                                            "label": "Religion (Int)"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "slight_of_hand",
-                                                    "label": "Slight of Hand (Dex)"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "slight_of_hand_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "slight_of_hand",
+                                                            "label": "Slight of Hand (Dex)"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "stealth",
-                                                    "label": "Stealth (Dex)"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "stealth_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "stealth",
+                                                            "label": "Stealth (Dex)"
+                                                        }
+                                                    ]
                                                 },
                                                 {
-                                                    "type": "input",
-                                                    "input_type": "plus_minus",
-                                                    "name": "survival",
-                                                    "label": "Survival (Wis)"
+                                                    "type":"row",
+                                                    "items":[
+                                                        {
+                                                            "type": "input",
+                                                            "input_type": "checkbox",
+                                                            "name": "survival_proficiency"
+                                                        },
+                                                        {
+                                                            "grow": true,
+                                                            "type": "input",
+                                                            "input_type": "plus_minus",
+                                                            "name": "survival",
+                                                            "label": "Survival (Wis)"
+                                                        }
+                                                    ]
                                                 },
                                                 {
                                                     "type": "strong",
@@ -915,7 +1177,6 @@
                         }
                     ]
                 }
-
             ]
         }
     ]
