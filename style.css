@@ -228,19 +228,28 @@ main button#deleteCharacter {
 /* New Character */
 div.templateBox {
     display: flex;
-    flex-flow: row nowrap;
-    width: 240px;
+    flex-flow: column nowrap;
+    width: 300px;
     border: 0.0625rem solid black;
     border-radius: 0.25rem;
+}
+div.templateBox > :first-child {
+    display: flex;
+    flex-flow: row nowrap;
+}
+div.templateBox > :first-child + div {
+    margin-top: 0.125rem;
+    padding-top: 0.125rem;
+    border-top: 0.0625rem solid black;
 }
 div.templateBox, div.templateDesc > * {
     margin: 0.125rem;
     padding: 0.125rem;
 }
-div.templateDesc {
+div.templateTitle {
     display: flex;
     flex-flow: column nowrap;
-    max-width: 160px;
+    width: 220px;
 }
 
 /* Desktop */

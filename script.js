@@ -64,9 +64,9 @@ DOMContentLoaded.then(() => {
         main._(container._(innerContainer._(fileInput) ,button));
         fetch('./templates.json').then(response => response.json()).then(templates => {
             templates.forEach(template => {
-                let container = _('div'), innerContainer = _('div'), button = _('button');
+                let container = _('div'), titleContainer = _('div'), button = _('button');
                 container.classList.add('templateBox')
-                innerContainer.classList.add('templateDesc')
+                titleContainer.classList.add('templateTitle')
                 button.textContent = 'Use This Template';
                 button.onclick = () => {
                     let butCharacter = _('button');
@@ -77,7 +77,7 @@ DOMContentLoaded.then(() => {
                     butCharacter.onclick = () => { loadCharacter(butCharacter) };
                     fetch(template.path).then(response => response.json()).then(renderTemplate).then(() => selectedTab(butCharacter)).then(saveSheet);
                 };
-                main._(container._(innerContainer._(`<strong>${template.name}<strong>`,`by ${template.author}`), button));
+                main._(container._(_('div')._(titleContainer._(_('strong')._(template.name),_('span')._('by ', _('u')._(template.author))), button), _(template.desc ? 'div':null)._(template.desc)));
             });
         })
     }
@@ -333,7 +333,7 @@ function saveSheet() {
     localStorage.setItem(character_name, JSON.stringify({
         name: character_name,
         template_path: $('main').dataset.templatePath,
-        inputs: $$('main input').map(input => (input.type == 'checkbox' ? { key: input.name, value: input.checked } :(input.value ? { key: input.name, value: input.value } : { key: '', value: '' }))),
+        inputs: $$('main input').map(input => ((input.type != 'checkbox' && input.value) || (input.type == 'checkbox' && input.checked) ? { key: input.name, value: (input.type == 'checkbox' ? input.checked : input.value) } : { key: '', value: '' })),
         notes: $('main textarea#notes').value
     }));
 }

@@ -1,0 +1,38 @@
+{
+    "path": "./templates/module_inventory.json",
+    "name": "Module: Inventory",
+    "author": "KlingonDragon",
+    "desc": "An inventory sheet that can be used in conjunction with other character sheets (or modules)",
+    "items": [
+        {
+            "type": "input_table",
+            "name": "inventory",
+            "cols": [
+                {
+                    "type": "input",
+                    "input_type": "checkbox",
+                    "name":"equipped",
+                    "label": "Equipped"
+                },
+                {
+                    "type": "input",
+                    "input_type": "text",
+                    "name":"item",
+                    "label": "Item"
+                },
+                {
+                    "type": "input",
+                    "input_type": "number",
+                    "name":"mass",
+                    "label": "Mass",
+                    "suffix": "kg"
+                },
+                {
+                    "type": "textarea",
+                    "name":"desc",
+                    "label": "Description"
+                }
+            ]
+        }
+    ]
+}
